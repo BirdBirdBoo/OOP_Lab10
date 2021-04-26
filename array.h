@@ -86,9 +86,9 @@ Array<T>::~Array() {
 template<class T>
 void Array<T>::alloc(size_t count) {
     if (data == nullptr) {
-        data = (T*) calloc(count, sizeof(T));
+        data = (T *) calloc(count, sizeof(T));
     } else {
-        data = (T*) realloc(data, count * sizeof(T));
+        data = (T *) realloc(data, count * sizeof(T));
     }
     capacity = count;
 }
@@ -126,7 +126,8 @@ void Array<T>::add(T newElement) {
     ++length;
 }
 
-template<> std::string Array<int>::dataString(char leftBracket, char rightBracket) const {
+template<>
+std::string Array<int>::dataString(char leftBracket, char rightBracket) const {
     std::stringstream builder;
     builder << "Data: " << leftBracket;
 
@@ -148,9 +149,9 @@ std::string Array<T>::dataString(char leftBracket, char rightBracket) const {
 
     if (getLength() > 0) {
         for (size_t i = 0; i < getLength() - 1; ++i) {
-            builder << (std::string)(*this)[i] << ", ";
+            builder << (std::string) (*this)[i] << ", ";
         }
-        builder << (std::string)(*this)[getLength() - 1];
+        builder << (std::string) (*this)[getLength() - 1];
     }
     builder << rightBracket;
 

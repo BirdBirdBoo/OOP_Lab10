@@ -16,6 +16,7 @@ public:
     Complex(double, double);
 
     bool operator<(const Complex &other) const;
+
     bool operator>(const Complex &other) const;
 
     Complex &operator+=(const Complex &other);
@@ -25,6 +26,7 @@ public:
     explicit operator std::string() const { return toString(); }
 
     std::string toString() const;
+
 private:
     double real = 0;
     double imaginary = 0;
